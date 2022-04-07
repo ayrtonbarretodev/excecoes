@@ -5,7 +5,8 @@ public class Cliente {
     private String cpf;
     private String profissao;
 
-    public Cliente(){}
+    public Cliente() {
+    }
 
     public Cliente(String nome, String cpf, String profissao) {
         this.nome = nome;
