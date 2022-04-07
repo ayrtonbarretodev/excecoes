@@ -26,21 +26,16 @@ public abstract class Conta {
 
     public abstract void deposita(double valor);
 
-    public boolean saca(double valor){
-        if (this.saldo>=valor){
-            saldo-=valor;
-            return true;
+    public void saca(double valor){
+        if (this.saldo<valor){
+            throw new SaldoInsuficienteException("Saldo: " + this.saldo + ", Valor: " + valor);
         }
-        return false;
+        saldo-=valor;
     }
 
-    public boolean transfere (Conta contaDestino, double valor){
-        if (valor<=this.saldo){
-            contaDestino.deposita(valor);
-            saca(valor);
-            return true;
-        }
-        return false;
+    public void transfere (Conta contaDestino, double valor){
+        this.saca(valor);
+        contaDestino.deposita(valor);
     }
 
     public double getSaldo() {
