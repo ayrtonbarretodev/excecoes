@@ -13,13 +13,13 @@ public class FluxoComTratamento {
         System.out.println("Fim do main");
     }
 
-    public static void metodo1() {
+    public static void metodo1() throws MinhaExcecao {
         System.out.println("Ini do metodo1");
         metodo2();
         System.out.println("Fim do metodo1");
     }
 
-    public static void metodo2() {
+    public static void metodo2() throws MinhaExcecao {
         System.out.println("Ini do metodo2");
         throw new MinhaExcecao("deu muito errado");
         //System.out.println("Fim do metodo2");
