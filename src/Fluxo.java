@@ -26,7 +26,7 @@ public class Fluxo {
                 //int a = i/0;
 
                 Conta c = null;
-                c.deposita();
+                //c.deposita();
         }
         System.out.println("Fim do metodo2");
     }
