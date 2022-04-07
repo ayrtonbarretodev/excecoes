@@ -5,7 +5,11 @@ public class TesteSaca {
         Conta conta = new ContaCorrente(123,321);
 
         conta.deposita(200.0);
-        conta.saca(190.0);
+        try {
+            conta.saca(290.0);
+        }catch (SaldoInsuficienteException exception){
+            System.out.println(exception.getMessage());
+        }
 
         System.out.println(conta.getSaldo());
     }
